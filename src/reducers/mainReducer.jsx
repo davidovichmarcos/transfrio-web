@@ -23,23 +23,6 @@ export const reducer = (state, action) => {
                 currentPage: action.payload,
                 goToBookingSection: action.payload === 3 ? false : false
             };
-      
-        case actionTypes.SHOW_BOOKING_HANDLER:
-            return {
-                ...state,
-                showBookingSection: true,
-                goToBookingSection: true
-            };
-        case actionTypes.HIDE_BOOKING_HANDLER:
-            return {
-                ...state,
-                showBookingSection: false,
-            };
-        case actionTypes.BOOKING_HANDLER_VISITED:
-          return {
-              ...state,
-              goToBookingSection: false,
-            };
       default:
         return state;
     }

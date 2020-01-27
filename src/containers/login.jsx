@@ -130,7 +130,7 @@ const Login = (props) => {
     return (
         <div className={classes.login}>
             <h1 className={classes.title}>Transfrio Web</h1>
-            <ReactPageScroller ref={setScrollHandler} pageOnChange={pageOnChange} blockScrollDown={false}>
+            <ReactPageScroller ref={setScrollHandler} pageOnChange={pageOnChange} blockScrollDown={false} containerWidth={"100%"}>
                 <LogInForm onAction={ action => loginFormActions(action) }></LogInForm>
                 <SignInForm onAction={ action => createUserWithEmail(action) }></SignInForm>
             </ReactPageScroller>

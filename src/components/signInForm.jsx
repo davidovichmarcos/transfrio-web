@@ -16,7 +16,7 @@ const styles = {
     formContainer: {
         display: "flex",
         justifyContent: "center",
-        flexDirection: "column"
+        flexDirection: "column",
     },
     fieldsContainer: {
         display: "flex",
