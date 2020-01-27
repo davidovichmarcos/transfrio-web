@@ -87,6 +87,7 @@ const LogInForm = (props) => {
                         label="Email"
                         margin="normal"
                         type="email"
+                        
                         onChange={ event => validateEmail(event.target.value, email => setEmail(email), () => console.log("ERROR") ) }
                         />
                         <WhiteTextField
