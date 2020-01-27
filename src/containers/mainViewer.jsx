@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useStateValue } from '../state/rootState';
-//import Header from '../components/header';
+import Header from '../components/header';
 import ReactPageScroller from "react-page-scroller";
 import { withStyles } from '@material-ui/styles';
 
@@ -41,7 +41,7 @@ export const MainViewer = (props) => {
 
     return (
         <div>
-            
+            <Header></Header>
             <div className={classes.content}>
             holi!
             </div>

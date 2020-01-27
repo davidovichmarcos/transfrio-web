@@ -20,7 +20,7 @@ const styles = {
         textAlign: "center"
     },
     loginFormContainer: {
-        height: "100vh",
+        height: "100%"
     },
     title: {
         width: "1fr",

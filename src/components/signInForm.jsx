@@ -11,7 +11,7 @@ const styles = {
     contentContainer: {
         padding: "10px",
         maxWidth: "450px",
-        width: "100%"
+        width: "50%"
     },
     formContainer: {
         display: "flex",
