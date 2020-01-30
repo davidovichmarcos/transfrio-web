@@ -10,6 +10,10 @@ const styles = {
     },
     contentContainer: {
         padding: "10px",
+        border: "1px solid",
+        borderRadius: "5px",
+        backgroundColor: "black",
+        color: "white",
         maxWidth: "450px",
         width: "100%"
     },

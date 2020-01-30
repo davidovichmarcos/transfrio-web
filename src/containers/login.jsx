@@ -16,7 +16,7 @@ const styles = {
         display: "grid",
         gridTemplateColumns: "repeat(1, minmax(240px, 1fr))",
         gridTemplateRows: "repeat(4, 100px)",
-        backgroundColor: "gray",
+        backgroundColor: "black",
         textAlign: "center"
     },
     loginFormContainer: {
@@ -26,7 +26,7 @@ const styles = {
         width: "1fr",
         fontFamily: "'Alegreya Sans SC', sans-serif",
         fontWeight: "bold",
-        color: "black"
+        color: "white"
     }
 }
 

@@ -5,13 +5,18 @@ import ReflectButton from './reflectButton';
 
 const styles = {
     centerContainer: {
+        margin: "20px",
         display: "flex",
         justifyContent: "center"
     },
     contentContainer: {
         padding: "10px",
         maxWidth: "450px",
-        width: "50%"
+        width: "50%",
+        border: "1px solid",
+        borderRadius: "5px",
+        backgroundColor: "black",
+        color: "white"
     },
     formContainer: {
         display: "flex",
