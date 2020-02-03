@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { withStyles } from '@material-ui/styles';
 import logoImage from '../assets/logo.png';
 import { fonts, colorScheme } from '../styles/styles';
+import ReflectButton from './reflectButton';
 
 
 const styles = {
     header: {
         position: "fixed",
         top: 0,
-        left: 0, 
+        left: 0,
         overflow: "auto",
         display: "block",
         zIndex: "1000",
@@ -30,6 +31,20 @@ const styles = {
         display: "flex",
         justifyContent: "space-between",
         width: "100%",
+    },
+    buttonContainer: {
+        justifyContent: "right",
+        justifySelf: "end"
+    },
+    formContainer: {
+        display: "grid",
+        gridTemplateColumns: "auto 3fr auto auto auto ",
+        justifyContent: "center",
+        flexDirection: "column"
+    },
+    spanContainer: {
+        justifyContent: "center",
+        alignSelf: "center"
     },
     navbar: {
         transition: ".5s ease-in-out",
@@ -110,15 +125,20 @@ const styles = {
 const Header = (props) => {
     const { classes } = props;
     const [open, showNavbar] = useState(false);
-    
+
     return (
-        <header className={classes.header +' '+ (open ? classes.open : '')}>
-                <div className={classes.logo +' '+ (open ? classes.logoHidden : '' )}>
-                    <span>TransFrio</span>
+        <header className={classes.header + ' ' + (open ? classes.open : '')}>
+            <div className={classes.formContainer}>
+                <span className={classes.spanContainer} >TransFrio</span>
+                <div className={classes.buttonContainer}>
+                    <ReflectButton text="Trucks" icon={<i className="fa fa-instagram"></i>} clicked={() => function () { }}></ReflectButton>
+                    <ReflectButton text="Drivers" icon={<i className="fa fa-instagram"></i>} clicked={() => function () { }}></ReflectButton>
+                    <ReflectButton text="Log Out" icon={<i className="fa fa-instagram"></i>} clicked={() => function () { }}></ReflectButton>
                 </div>
-           
+            </div>
+
         </header>
-        
+
     );
 }
 
