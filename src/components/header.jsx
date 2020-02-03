@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/styles';
 import logoImage from '../assets/logo.png';
 import { fonts, colorScheme } from '../styles/styles';
 import ReflectButton from './reflectButton';
+import { navigate } from 'hookrouter';
 
 
 const styles = {
@@ -123,17 +124,20 @@ const styles = {
 }
 
 const Header = (props) => {
-    const { classes } = props;
+    const { classes, onAction } = props;
     const [open, showNavbar] = useState(false);
+    const navigateTo = route => {
+        navigate(route);
+    }
 
     return (
         <header className={classes.header + ' ' + (open ? classes.open : '')}>
             <div className={classes.formContainer}>
                 <span className={classes.spanContainer} >TransFrio</span>
                 <div className={classes.buttonContainer}>
-                    <ReflectButton text="Trucks" icon={<i className="fa fa-instagram"></i>} clicked={() => function () { }}></ReflectButton>
-                    <ReflectButton text="Drivers" icon={<i className="fa fa-instagram"></i>} clicked={() => function () { }}></ReflectButton>
-                    <ReflectButton text="Log Out" icon={<i className="fa fa-instagram"></i>} clicked={() => function () { }}></ReflectButton>
+                    <ReflectButton text="Trucks" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/trucks")}></ReflectButton>
+                    <ReflectButton text="Drivers" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/drivers")}></ReflectButton>
+                    <ReflectButton text="Log Out" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/login")}></ReflectButton>
                 </div>
             </div>
 
