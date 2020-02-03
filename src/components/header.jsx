@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { withStyles } from '@material-ui/styles';
 import logoImage from '../assets/logo.png';
 import { fonts, colorScheme } from '../styles/styles';
-import ReflectButton from './reflectButton';
+import HeaderButton from './headerButton';
 import { navigate } from 'hookrouter';
 
 
@@ -45,7 +45,8 @@ const styles = {
     },
     spanContainer: {
         justifyContent: "center",
-        alignSelf: "center"
+        alignSelf: "center",
+        color: "white"
     },
     navbar: {
         transition: ".5s ease-in-out",
@@ -135,9 +136,9 @@ const Header = (props) => {
             <div className={classes.formContainer}>
                 <span className={classes.spanContainer} >TransFrio</span>
                 <div className={classes.buttonContainer}>
-                    <ReflectButton text="Trucks" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/trucks")}></ReflectButton>
-                    <ReflectButton text="Drivers" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/drivers")}></ReflectButton>
-                    <ReflectButton text="Log Out" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/login")}></ReflectButton>
+                    <HeaderButton text="Trucks" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/trucks")}></HeaderButton>
+                    <HeaderButton text="Drivers" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/drivers")}></HeaderButton>
+                    <HeaderButton text="Log Out" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/login")}></HeaderButton>
                 </div>
             </div>
 
