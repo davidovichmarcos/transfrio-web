@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/styles';
 
 const styles = {
     content: {
-        backgroundColor: "#FFF",
+        backgroundColor: "white",
         height: "100vh"
     },
     headerSpace: {

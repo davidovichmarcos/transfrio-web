@@ -21,7 +21,7 @@ const styles = {
         color: "white",
         fontWeight: "bold",
         fontSize: "40px",
-        borderBottom: "1px solid #FFF",
+        border: "1px solid black",
         transition: ".5s ease-in-out",
         padding: "10px 10px 10px 10px"
     },
