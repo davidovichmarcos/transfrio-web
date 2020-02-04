@@ -77,7 +77,7 @@ const Login = (props) => {
             const { uid } = response.user;
             let user = { id: uid };
             // retrieve user related data from db
-            fetch(enviroment.baseUrl + '/getUserData', {
+            fetch(enviroment.baseUrl + `/logUser/${user.id}`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -85,8 +85,8 @@ const Login = (props) => {
                 },
                 body: JSON.stringify(user)
             })
-            .then( response => response.json() )
-            .then( response => dispatch(appActions.userLoggedIn(response.user)) );
+            .then( response => response.json() );
+            //.then( response => dispatch(appActions.userLoggedIn(response.user)) );
         })
         .catch(function(error) {
             console.log(error);

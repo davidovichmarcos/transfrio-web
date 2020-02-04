@@ -38,7 +38,6 @@ export const MainViewer = (props) => {
         <div>
             <Header></Header>
             <div className={classes.content}>
-            holi!
             </div>
         </div>
     );
