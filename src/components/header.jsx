@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { withStyles } from '@material-ui/styles';
 import logoImage from '../assets/logo.png';
-import { fonts, colorScheme } from '../styles/styles';
+import { fonts } from '../styles/styles';
 import HeaderButton from './headerButton';
 import { navigate } from 'hookrouter';
 
@@ -125,8 +125,8 @@ const styles = {
 }
 
 const Header = (props) => {
-    const { classes, onAction } = props;
-    const [open, showNavbar] = useState(false);
+    const { classes } = props;
+    const [open] = useState(false);
     const navigateTo = route => {
         navigate(route);
     }

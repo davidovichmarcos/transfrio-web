@@ -1,4 +1,3 @@
-import * as type from './types';
 import * as actionTypes from './types';
 
 export const userLoggedIn = user => ({

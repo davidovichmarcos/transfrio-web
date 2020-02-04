@@ -1,11 +1,10 @@
 import React from 'react';
 import {Router} from '../components/router';
-import { useRedirect, navigate } from 'hookrouter';
+import { navigate } from 'hookrouter';
 import firebase from "firebase";
 import "firebase/auth";
-import { enviroment } from '../enviroment';
 import firebaseConfig from '../fireBaseAuth.json';
-import { StateProvider, useStateValue } from '../state/rootState';
+import { StateProvider } from '../state/rootState';
 import { reducer, initialState } from '../reducers/mainReducer';
 
 const  fbConfig= () => {

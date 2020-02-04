@@ -5,7 +5,7 @@ import firebase from "firebase";
 import "firebase/auth";
 import { enviroment } from '../enviroment';
 import * as appActions from '../actions/app';
-import { useRedirect, navigate } from 'hookrouter';
+import { navigate } from 'hookrouter';
 import ReactPageScroller from "react-page-scroller";
 
 import SignInForm from '../components/signInForm';
@@ -32,7 +32,7 @@ const styles = {
 
 const Login = (props) => {
     const { classes } = props;
-    const [state, dispatch] = useStateValue();
+    const [dispatch] = useStateValue();
     let pageScroller = null;
 
     firebase.auth().signOut().then(function() {
@@ -46,9 +46,7 @@ const Login = (props) => {
         }
     });
 
-    // const logginWithInstagram = () => {
-    //     window.open(enviroment.baseUrl+ '/instagram', 'firebaseAuth', 'height=315,width=400');
-    // }
+    
 
     const createUserWithEmail = user => {
         firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
@@ -89,13 +87,6 @@ const Login = (props) => {
             })
             .then( response => response.json() )
             .then( response => dispatch(appActions.userLoggedIn(response.user)) );
-            // firebase.database().ref('/users/' + uid).once('value').then( (snapshot) => {
-            //     user.bookings = snapshot.bookings | [];
-            //     user.email = email;
-            //     user.id = uid;
-                
-            //     dispatch( appActions.userLoggedIn(user) );
-            // });
         })
         .catch(function(error) {
             console.log(error);

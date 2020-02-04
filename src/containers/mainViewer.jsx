@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
-import { useStateValue } from '../state/rootState';
+import React from 'react';
 import Header from '../components/header';
-import ReactPageScroller from "react-page-scroller";
 import { withStyles } from '@material-ui/styles';
 
 
@@ -35,9 +33,6 @@ const styles = {
 
 export const MainViewer = (props) => {
     const { classes } = props; 
-    const [state, dispatch] = useStateValue();
-    const { user } = state;
-    const { isDealing, showBookingSection, goToBookingSection, currentPage } = state;
 
     return (
         <div>

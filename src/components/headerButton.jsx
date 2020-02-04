@@ -50,7 +50,6 @@ const styles = {
                 fontSize: "18px"
             },
             "& .mask": {
-                backgroundColor: "#fff",
                 backgroundColor: "rgba(255, 255, 255, 0.5)",
                 height: "100px",
                 position: "absolute",
