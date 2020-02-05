@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/header';
 import { withStyles } from '@material-ui/styles';
+import DriverForm from '../components/driverForm';
 
 
 const styles = {
@@ -18,7 +19,7 @@ export const DriversView = (props) => {
         <div>
             <Header></Header>
             <div className={classes.content}>
-                <div>Drivers</div>
+                <DriverForm/>
             </div>
         </div>
     );
