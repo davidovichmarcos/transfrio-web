@@ -7,7 +7,7 @@ import DriverForm from '../components/driverForm';
 const styles = {
     content: {
         backgroundColor: "white",
-        height: "80vh"// to define later
+        margin: "5px"
     }
 }
 

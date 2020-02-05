@@ -7,7 +7,8 @@ const styles = {
     centerContainer: {
         margin: "20px",
         display: "flex",
-        justifyContent: "center"
+        justifyContent: "center",
+        backgroundColor: "black"
     },
     contentContainer: {
         padding: "10px",
@@ -22,6 +23,7 @@ const styles = {
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
+        backgroundColor: "black",
     },
     fieldsContainer: {
         display: "flex",

@@ -39,6 +39,7 @@ const styles = {
     },
     formContainer: {
         display: "grid",
+        backgroundColor: "black",
         padding: "6px 30px 6px 6px",
         gridTemplateColumns: "auto 3fr auto auto auto ",
         justifyContent: "center",
