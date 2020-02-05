@@ -16,14 +16,12 @@ const styles = {
         width: "50%",
         border: "1px solid",
         borderRadius: "5px",
-        backgroundColor: "black",
         color: "white"
     },
     formContainer: {
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
-        backgroundColor: "black",
     },
     fieldsContainer: {
         display: "flex",

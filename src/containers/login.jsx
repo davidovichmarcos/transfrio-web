@@ -18,8 +18,8 @@ const styles = {
         gridTemplateRows: "repeat(4, 100px)",
         backgroundColor: "black",
         textAlign: "center",
-        "& div": {
-            backgroundColor: "black"
+        "& > div": {
+            backgroundColor: "black",
         }
     },
     
