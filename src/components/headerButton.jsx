@@ -40,7 +40,7 @@ const styles = {
         "& div": {
             "& a": {
                 color: "white",
-                fontSize: "14px",
+                fontSize: "16px",
                 textDecoration: "none"
             },
             "& i": {

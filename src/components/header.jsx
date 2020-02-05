@@ -12,10 +12,10 @@ const styles = {
         top: 0,
         left: 0,
         overflow: "auto",
-        display: "block",
+        display: "contents",
         zIndex: "1000",
         width: "100%",
-        height: "65px",
+        height: "90px",
         minHeight: "50px",
         backgroundColor: "#000",
         color: "white",
@@ -39,6 +39,7 @@ const styles = {
     },
     formContainer: {
         display: "grid",
+        padding: "6px 30px 6px 6px",
         gridTemplateColumns: "auto 3fr auto auto auto ",
         justifyContent: "center",
         flexDirection: "column"
@@ -138,7 +139,7 @@ const Header = (props) => {
                 <div className={classes.buttonContainer}>
                     <HeaderButton text="Trucks" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/trucks")}></HeaderButton>
                     <HeaderButton text="Drivers" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/drivers")}></HeaderButton>
-                    <HeaderButton text="Log Out" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/login")}></HeaderButton>
+                    <HeaderButton text="LogOut" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/login")}></HeaderButton>
                 </div>
             </div>
 

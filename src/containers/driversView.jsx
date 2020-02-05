@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/styles';
 const styles = {
     content: {
         backgroundColor: "white",
-        height: "100vh"
+        height: "80vh"// to define later
     }
 }
 

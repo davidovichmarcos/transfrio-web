@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/styles';
 const styles = {
     content: {
         backgroundColor: "white",
-        height: "100vh"
+        height: "80vh"// to define later
     },
     headerSpace: {
         height: "76px"
@@ -32,12 +32,13 @@ const styles = {
 }
 
 export const MainViewer = (props) => {
-    const { classes } = props; 
+    const { classes } = props;
 
     return (
         <div>
             <Header></Header>
             <div className={classes.content}>
+                <div>holi</div>
             </div>
         </div>
     );
