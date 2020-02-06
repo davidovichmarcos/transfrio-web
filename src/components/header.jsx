@@ -138,8 +138,8 @@ const Header = (props) => {
             <div className={classes.formContainer}>
                 <span className={classes.spanContainer} >TransFrio</span>
                 <div className={classes.buttonContainer}>
-                    <HeaderButton text="Trucks" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/trucks")}></HeaderButton>
-                    <HeaderButton text="Drivers" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/drivers")}></HeaderButton>
+                    <HeaderButton text="Camiones" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/trucks")}></HeaderButton>
+                    <HeaderButton text="Conductores" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/drivers")}></HeaderButton>
                     <HeaderButton text="LogOut" icon={<i className="fa fa-instagram"></i>} clicked={() => navigateTo("/login")}></HeaderButton>
                 </div>
             </div>

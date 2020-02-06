@@ -28,15 +28,15 @@ const styles = {
 }
 
 
-export const DriverForm = (props) => {
+export const TruckForm = (props) => {
     const { classes, onAction } = props; 
-    let driver = { name: '', lastName: '', address: '', phone: '', document: '' };
-    const setName = value => driver.name = value;
-    const setLastName = value => driver.lastName = value;
-    const setAddress = value => driver.address = value;
-    const setPhone = value => driver.phone = value;
-    const setDocument = value => driver.document = value;
-    const newDriver= () => onAction(driver);
+    let truck = { brand: '', driverId: '', licensePlate: '', model: '', year: '' };
+    const setBrand = value => truck.brand = value;
+    const setDriverId = value => truck.driverId = value;
+    const setLicensePlate = value => truck.licensePlate = value;
+    const setModel = value => truck.model = value;
+    const setYear = value => truck.year = value;
+    const newTruck= () => onAction(truck);
 
     return (
         <div>
@@ -46,46 +46,46 @@ export const DriverForm = (props) => {
                         <WhiteTextField
                         id="standard-basic"
                         className={classes.textField}
-                        label="Nombre"
+                        label="Marca"
                         margin="normal"
-                        onChange={ event => setName(event.target.value)}
+                        onChange={ event => setBrand(event.target.value)}
                         />
+                        
                         <WhiteTextField
                         id="standard-basic"
                         className={classes.textField}
-                        label="Apellido"
+                        label="driverId"
                         margin="normal"
-                        onChange={ event => setLastName(event.target.value)}
+                        onChange={ event => setDriverId(event.target.value)}
                         />
                        <WhiteTextField
                         id="standard-basic"
                         className={classes.textField}
-                        label="Dirección"
+                        label="Patente"
                         margin="normal"
-                        onChange={ event => setAddress(event.target.value)}
+                        onChange={ event => setLicensePlate(event.target.value)}
                         />
                         <WhiteTextField
                         id="standard-basic"
                         className={classes.textField}
-                        label="Telefono"
-                        type="number"
+                        label="Modelo"
                         margin="normal"
-                        onChange={ event => setPhone(event.target.value)}
+                        onChange={ event => setModel(event.target.value)}
                         />
                         <WhiteTextField
                         id="standard-basic"
                         className={classes.textField}
-                        label="Documento"
+                        label="Año"
                         type="number"
                         margin="normal"
-                        onChange={ event => setDocument(event.target.value)}
+                        onChange={ event => setYear(event.target.value)}
                         />
                     </div>
-                    <ReflectButton text="Crear Conductor" icon={<i className="fa fa-instagram"></i>} clicked={ () => newDriver() }></ReflectButton>
+                    <ReflectButton text="Crear Camión" icon={<i className="fa fa-instagram"></i>} clicked={ () => newTruck() }></ReflectButton>
                 </div>
             </div>
         </div>
     );
 }
 
-export default withStyles(styles)(DriverForm);
+export default withStyles(styles)(TruckForm);
