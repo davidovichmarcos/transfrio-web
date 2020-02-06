@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { withStyles } from '@material-ui/styles';
-import WhiteTextField from './textField'; 
+import WhiteTextField from './textField';
 import ReflectButton from './reflectButton';
+import Select from 'react-select'
+import { enviroment } from '../enviroment';
 
+
+const getDrivers = drivers => {
+    return fetch(enviroment.baseUrl + `/getDrivers`, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(drivers)
+    })
+        .then(response => response.json())
+        .catch(function (error) {
+            console.log(error);
+        });
+}
 const styles = {
     content: {
         backgroundColor: "white",
@@ -29,59 +46,66 @@ const styles = {
 
 
 export const TruckForm = (props) => {
-    const { classes, onAction } = props; 
-    let truck = { brand: '', driverId: '', licensePlate: '', model: '', year: '' };
+    const { classes, onAction } = props;
+    var drivers = new Array;
+    let truck = { brand: '', driverDocument: '', licensePlate: '', model: '', year: '' };
     const setBrand = value => truck.brand = value;
-    const setDriverId = value => truck.driverId = value;
+    const setDriverDocument = value => truck.driverDocument = value;
     const setLicensePlate = value => truck.licensePlate = value;
     const setModel = value => truck.model = value;
     const setYear = value => truck.year = value;
-    const newTruck= () => onAction(truck);
+    const newTruck = () => onAction(truck);
+    getDrivers().then(((result) => {
+        
+        const resultArray = Object.values(result);
+        resultArray.forEach(driver => {
+            drivers.push({ value: driver.document, label: `${driver.name} ${driver.lastName}` })
+        });
+        console.log(drivers);
+        
+    }));
 
     return (
         <div>
             <div className={classes.content}>
-            <div className={classes.formContainer}>
+                <div className={classes.formContainer}>
                     <div className={classes.fieldsContainer}>
                         <WhiteTextField
-                        id="standard-basic"
-                        className={classes.textField}
-                        label="Marca"
-                        margin="normal"
-                        onChange={ event => setBrand(event.target.value)}
+                            id="standard-basic"
+                            className={classes.textField}
+                            label="Marca"
+                            margin="normal"
+                            onChange={event => setBrand(event.target.value)}
                         />
-                        
+
                         <WhiteTextField
-                        id="standard-basic"
-                        className={classes.textField}
-                        label="driverId"
-                        margin="normal"
-                        onChange={ event => setDriverId(event.target.value)}
-                        />
-                       <WhiteTextField
-                        id="standard-basic"
-                        className={classes.textField}
-                        label="Patente"
-                        margin="normal"
-                        onChange={ event => setLicensePlate(event.target.value)}
+                            id="standard-basic"
+                            className={classes.textField}
+                            label="Patente"
+                            margin="normal"
+                            onChange={event => setLicensePlate(event.target.value)}
                         />
                         <WhiteTextField
-                        id="standard-basic"
-                        className={classes.textField}
-                        label="Modelo"
-                        margin="normal"
-                        onChange={ event => setModel(event.target.value)}
+                            id="standard-basic"
+                            className={classes.textField}
+                            label="Modelo"
+                            margin="normal"
+                            onChange={event => setModel(event.target.value)}
                         />
                         <WhiteTextField
-                        id="standard-basic"
-                        className={classes.textField}
-                        label="Año"
-                        type="number"
-                        margin="normal"
-                        onChange={ event => setYear(event.target.value)}
+                            id="standard-basic"
+                            className={classes.textField}
+                            label="Año"
+                            type="number"
+                            margin="normal"
+                            onChange={event => setYear(event.target.value)}
                         />
+                        <Select options={drivers}
+                            placeholder="Driver" 
+                            onChange={event => setDriverDocument(event.value)
+                             }/>
                     </div>
-                    <ReflectButton text="Crear Camión" icon={<i className="fa fa-instagram"></i>} clicked={ () => newTruck() }></ReflectButton>
+                    <ReflectButton text="Crear Camión" icon={<i className="fa fa-instagram"></i>} clicked={() => newTruck()}></ReflectButton>
                 </div>
             </div>
         </div>
