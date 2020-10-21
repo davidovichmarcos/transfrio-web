@@ -1,26 +1,25 @@
-import React from 'react';
-import {Router} from '../components/router';
-import { navigate } from 'hookrouter';
+import React from "react";
+import { Router } from "../components/router";
+import { navigate } from "hookrouter";
 import firebase from "firebase";
 import "firebase/auth";
-import firebaseConfig from '../fireBaseAuth.json';
-import { StateProvider } from '../state/rootState';
-import { reducer, initialState } from '../reducers/mainReducer';
+import firebaseConfig from "../fireBaseAuth.json";
+import { StateProvider } from "../state/rootState";
+import { reducer, initialState } from "../reducers/mainReducer";
 
-const  fbConfig= () => {
-  return  firebaseConfig;
-}
+// const  fbConfig= () => {
+//   return  firebaseConfig;
+// }
 
 const App = () => {
-  const firebaseConfig = fbConfig();
-
+  // const firebaseConfig = fbConfig();
   firebase.initializeApp(firebaseConfig);
-  firebase.auth().onAuthStateChanged( user => {
-      if (user) {
-        navigate('/');
-      } else {
-        navigate('/login');
-      }
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      navigate("/");
+    } else {
+      navigate("/login");
+    }
   });
 
   return (
@@ -28,6 +27,6 @@ const App = () => {
       <Router></Router>
     </StateProvider>
   );
-}
+};
 
 export default App;
