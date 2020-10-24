@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches:
+    - master
+    - release/*
 
 jobs:
   build:
@@ -19,15 +19,14 @@ jobs:
         node-version: [10.x, 12.x, 14.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
       with:
-        node-version: ${{ matrix.node-version }}
-    - run: 'set FIREBASE_AUTH'
-      shell: bash
+        node-version: '10.x'
+    - run: npm install
+    - run: npm run build:prod
+    - uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting
       env:
-        FIREBASE_AUTH: ${{secrets.FIREBASE_AUTH}}
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
