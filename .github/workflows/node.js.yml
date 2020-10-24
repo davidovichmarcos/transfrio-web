@@ -24,6 +24,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: 'set FIREBASE_AUTH'
+      shell: bash
+      env:
+        FIREBASE_AUTH: ${{secrets.FIREBASE_AUTH}}
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
