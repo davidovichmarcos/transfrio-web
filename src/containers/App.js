@@ -3,7 +3,7 @@ import { Router } from "../components/router";
 import { navigate } from "hookrouter";
 import firebase from "firebase";
 import "firebase/auth";
-import firebaseConfig from "../fireBaseAuth.json";
+import firebaseConfig from "../firebaseAuth.json";
 import { StateProvider } from "../state/rootState";
 import { reducer, initialState } from "../reducers/mainReducer";
 

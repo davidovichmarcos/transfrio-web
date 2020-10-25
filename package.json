@@ -17,12 +17,13 @@
     "hookrouter": "^1.2.3",
     "instafeed.js": "^1.4.1",
     "lodash-es": "^4.17.15",
+    "pm2": "^4.5.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-gesture-responder": "^2.1.0",
     "react-page-scroller": "^2.0.6-beta",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0",
+    "react-scripts": "^4.0.0",
     "react-select": "^3.0.8",
     "react-spring": "^8.0.27",
     "react-use-gesture": "^6.0.3",
@@ -30,7 +31,8 @@
     "simple-oauth2": "^2.5.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run build && pm2 start ./api/main.js --name transfrio --watch",
+    "develop": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
