@@ -69,7 +69,7 @@ const ReflectButton = (props) => {
     return (
     <button className={classes.button +' '+ (props.strong ? classes.boldFont : '' )} onClick={ () => clicked(true)}>
         <div>
-            <a>{ text }</a>
+            <div>{ text }</div>
             { icon }
             <div className="mask"></div>
         </div>

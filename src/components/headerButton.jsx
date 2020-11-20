@@ -69,7 +69,7 @@ const HeaderButton = (props) => {
     return (
     <button className={classes.button +' '+ (props.strong ? classes.boldFont : '' )} onClick={ () => clicked(true)}>
         <div>
-            <a>{ text }</a>
+            <a href>{ text }</a>
             { icon }
             <div className="mask"></div>
         </div>
