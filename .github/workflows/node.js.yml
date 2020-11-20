@@ -20,6 +20,7 @@ jobs:
       with:
         node-version: '10.x'
     - run: npm install
+    - run: echo "${{ secrets.FIREBASE_DB_TOKEN }}" > ./firebaseAuth.json
     - run: npm run build
     - uses: w9jds/firebase-action@master
       with:
