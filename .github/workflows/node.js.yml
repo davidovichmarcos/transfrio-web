@@ -19,7 +19,6 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: '10.x'
-    - run: apt update && apt install sudo
     - run: sudo ./.github/scripts/decrypt_secret.sh
       env:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
