@@ -19,7 +19,8 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: '10.x'
-    - run: ./.github/scripts/decrypt_secret.sh
+    - run: cd ./.github/scripts/
+    - run: ./decrypt_secret.sh
         env:
           LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
     - run: npm install
