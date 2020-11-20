@@ -13,8 +13,6 @@ jobs:
   firebase-deploy:
 
     runs-on: ubuntu-latest
-    container:
-      options: --user root
 
     steps:
     - uses: actions/checkout@v2
