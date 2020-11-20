@@ -20,7 +20,7 @@ jobs:
       with:
         node-version: '10.x'
     - run: cd ./.github/scripts/
-    - run: sudo ./decrypt_secret.sh
+    - run: ./decrypt_secret.sh
       env:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
     - run: npm install
