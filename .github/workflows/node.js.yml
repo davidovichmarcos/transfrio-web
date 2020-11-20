@@ -15,11 +15,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
     - uses: actions/setup-node@master
       with:
         node-version: '10.x'
-    - run: sudo ./.github/scripts/decrypt_secret.sh
+    - run: cd ./.github/scripts/
+    - run: sudo ./decrypt_secret.sh
       env:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
     - run: npm install
