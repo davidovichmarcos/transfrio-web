@@ -104,9 +104,9 @@ const Login = (props) => {
         // }
     }
 
-    const goToPage = (page) => {
+    /*const goToPage = (page) => {
         // dispatch( appActions.changePage({ payload: page }) );
-    }
+    }*/
 
     const setScrollHandler = scroll => {
         if(scroll) {

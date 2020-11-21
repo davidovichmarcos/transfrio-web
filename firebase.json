@@ -3,7 +3,7 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "public",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -15,13 +15,5 @@
         "destination": "/index.html"
       }
     ]
-  },
-  "emulators": {
-    "hosting": {
-      "port": 5000
-    },
-    "ui": {
-      "enabled": false
-    }
   }
 }
