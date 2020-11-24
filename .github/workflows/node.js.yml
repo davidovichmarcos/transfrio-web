@@ -25,6 +25,9 @@ jobs:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
     - run: npm install
     - run: npm run build
+    - run: |
+        cd functions
+        npm install
     - uses: w9jds/firebase-action@master
       with:
         args: deploy --only hosting
